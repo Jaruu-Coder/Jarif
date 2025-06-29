@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarif Ahmed</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="/assets/img/favicon.jpeg" type="image/x-icon" />
+  <style>
+  .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.video-card video {
+ cursor: pointer; /* So user knows it’s clickable */
+}
+.video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+    section h2, section h3 { margin-bottom: 20px; }
+    .music-player {
+      position: fixed; bottom: 10px; right: 10px;
+      background: var(--container-color); border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 10px 15px; display: flex; align-items: center;
+      gap: 10px; font-family: var(--body-font); z-index: 999;
+    }
+    .music-info span { font-size: 0.9rem; font-weight: bold; color: var(--title-color); }
+    .music-controls i {
+      font-size: 1.2rem; color: var(--title-color); cursor: pointer;
+      margin: 0 5px;
+    }
+    .music-controls i:hover { color: var(--first-color); }
+    .video-card {
+      position: relative; width: 90%; max-width: 500px;
+      aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); margin: 20px auto;
+    }
+    .video-card video {
+      width: 100%; height: 100%; object-fit: cover; border-radius: inherit;
+    }
+    .play-button {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px);
+      padding: 15px; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .play-button:hover { background: rgba(255, 255, 255, 0.8); }
+    .play-button i { font-size: 24px; color: #000; }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header class="profile container">
+    <i class="ri-moon-line change-theme" id="theme-button"></i>
+    <div class="profile__container grid">
+      <div class="profile__data">
+        <div class="profile__border">
+          <div class="profile__perfil">
+            <img src="/assets/img/profile.jpg" alt="Profile Picture" />
+          </div>
+        </div>
+        <h2 class="profile__name">Jarif Ahmed</h2>
+        <h3 class="profile__profession">Developer</h3>
+        <ul class="profile__social">
+          <a href="https://youtube.com/@ahmed_sojib49" target="_blank" class="profile__social-link">
+            <i class="ri-youtube-line"></i>
+          </a>
+          <a href="mailto:ahmedjarif1230@gmail.com" target="_blank" class="profile__social-link">
+            <i class="ri-mail-line"></i>
+          </a>
+          <a href="www.instagram.com/ahmed.jarif49" target="_blank" class="profile__social-link">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </ul>
+      </div>
+      <div class="profile__buttons">
+        <a href="https://m.me/ahmed.jarif49" class="button">
+          Message <i class="ri-messages-line"></i>
+        </a>
+        <a href="https://www.facebook.com/ahmed.jarif49" class="button">
+          Contact <i class="ri-messages-line"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Links -->
+  <div class="filters__content">
+    <a href="#about">About</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#skills">More</a>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello there! I'm <strong>Jarif</strong>, known as <strong>Jaruu..!</strong>.I'm not a developer, I am simple web developer who need some love :3</p>
+    <div class="image-wrapper">
+      <img src="/assets/img/cutecat.jpeg" alt="Cute Cat Animation" />
+    </div>
+    <p>I know a little about <strong>HTML</strong> and <strong>CSS</strong>, but I'm not an expert yet.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" style="display: none;">
+  <h2>Project</h2>
+  <p>This is my simple same create project / video..!</p>
+
+  <div class="video-grid">
+    <div class="video-card">
+      <video src="/assets/video/suhasini.mp4" id="video1"></video>
+      <div class="play-button" onclick="togglePlay('video1', this)">
+        <i class="ri-play-fill"></i>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video src="/assets/video/bhalo.mp4" id="video2"></video>
+      <div class="play-button" onclick="togglePlay('video2', this)">
+        <i class="ri-play-fill"></i>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video src="/assets/video/rajjo.mp4" id="video3"></video>
+      <div class="play-button" onclick="togglePlay('video3', this)">
+        <i class="ri-play-fill"></i>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video src="/assets/video/ushnota.mp4" id="video4"></video>
+      <div class="play-button" onclick="togglePlay('video4', this)">
+        <i class="ri-play-fill"></i>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video src="/assets/video/obostan.mp4" id="video5"></video>
+      <div class="play-button" onclick="togglePlay('video5', this)">
+        <i class="ri-play-fill"></i>
+      </div>
+    </div>
+  </div>
+  
+</section>
+  <!-- Skills Section -->
+  <section id="skills" style="display: none;">
+    <h3>Greetings!</h3>
+    <p>Thanks for visiting my web portfolio.</p>
+    <div class="image-wrapper">
+      <img src="/assets/img/cat.jpeg" alt="Cute Cat Animation" />
+    </div>
+  </section>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <div class="music-info">
+      <span id="song-title">Blue</span>
+    </div>
+    <div class="music-controls">
+      <i id="prevBtn" class="ri-skip-back-line"></i>
+      <i id="playPause" class="ri-pause-line"></i>
+      <i id="nextBtn" class="ri-skip-forward-line"></i>
+    </div>
+    <audio id="myAudio" autoplay loop>
+      <source id="audioSource" src="assets/audio/song1.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <span class="footer__copy">&#169; Jarif Ahmed - 2025</span>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Section Toggle
+    const links = document.querySelectorAll('.filters__content a');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.getAttribute('href').substring(1);
+
+        sections.forEach(sec => {
+          sec.style.display = sec.id === target ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Show "about" by default
+    document.addEventListener("DOMContentLoaded", () => {
+      sections.forEach(sec => {
+        sec.style.display = sec.id === "about" ? "block" : "none";
+      });
+    });
+
+    // Video Toggle
+    function togglePlay(videoId, button) {
+      const video = document.getElementById(videoId);
+      const icon = button.querySelector("i");
+
+      if (video.paused) {
+        video.play();
+        icon.classList.remove("ri-play-fill");
+        icon.classList.add("ri-pause-fill");
+      } else {
+        video.pause();
+        icon.classList.remove("ri-pause-fill");
+        icon.classList.add("ri-play-fill");
+      }
+    }
+  </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('.filters__content a');
+    const sections = document.querySelectorAll('section');
+
+    // Initially show only the "about" section
+    sections.forEach(sec => {
+      sec.style.display = sec.id === "about" ? "block" : "none";
+    });
+
+    // Navigation link click handler
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.getAttribute('href').substring(1);
+
+        sections.forEach(sec => {
+          sec.style.display = sec.id === target ? 'block' : 'none';
+        });
+      });
+    });
+  });
+
+  let currentVideo = null;
+
+  function togglePlay(videoId, button) {
+    const video = document.getElementById(videoId);
+
+    // Pause any previously playing video
+    if (currentVideo && currentVideo !== video) {
+      currentVideo.pause();
+      const prevBtn = currentVideo.closest('.video-card').querySelector('.play-button');
+      if (prevBtn) {
+        prevBtn.style.display = 'flex';
+        prevBtn.querySelector('i').className = 'ri-play-fill';
+      }
+    }
+
+    const icon = button.querySelector("i");
+
+    if (video.paused) {
+      video.play();
+      icon.className = "ri-pause-fill";
+      button.style.display = 'none';
+      currentVideo = video;
+    } else {
+      video.pause();
+      icon.className = "ri-play-fill";
+      button.style.display = 'flex';
+      currentVideo = null;
+    }
+
+    // Ensure click on video pauses it
+    video.onclick = () => {
+      if (!video.paused) {
+        video.pause();
+        button.querySelector("i").className = "ri-play-fill";
+        button.style.display = 'flex';
+        currentVideo = null;
+      }
+    };
+  }
+</script>
+
+
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
